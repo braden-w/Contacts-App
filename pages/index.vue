@@ -8,10 +8,10 @@
           :cols="column.columnsWide"
         >
           <v-icon v-if="column.icon">{{ column.icon }}</v-icon>
-          <h1 v-else class="caption">{{ column.name }}</h1></v-col
-        >
+          <h1 v-else class="caption">{{ column.name }}</h1>
+        </v-col>
       </v-row>
-      <v-divider></v-divider>
+      <v-divider />
 
       <v-container fluid>
         <v-card
@@ -29,8 +29,8 @@
               <h1 v-else class="caption">{{ contact[column.id] }}</h1>
             </v-col>
           </v-row>
-        </v-card></v-container
-      >
+        </v-card>
+      </v-container>
     </v-container>
   </v-app>
 </template>
