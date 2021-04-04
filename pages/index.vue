@@ -27,8 +27,8 @@
               :key="column"
               :cols="column.columnsWide"
             >
-              <v-icon v-if="column.icon">{{ column.icon }}</v-icon>
-              <h1 v-else class="caption">{{ column.name }}</h1>
+              <v-icon v-if="column.icon">{{ contact[column.id] }}</v-icon>
+              <h1 v-else class="caption">{{ contact[column.id] }}</h1>
             </v-col>
           </v-row>
         </v-card></v-container
