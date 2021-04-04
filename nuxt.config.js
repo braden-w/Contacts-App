@@ -34,6 +34,23 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: '<apiKey>',
+          authDomain: '<authDomain>',
+          projectId: '<projectId>',
+          storageBucket: '<storageBucket>',
+          messagingSenderId: '<messagingSenderId>',
+          appId: '<appId>',
+          measurementId: '<measurementId>',
+        },
+        services: {
+          auth: true, // Just as example. Can be any other service.
+        },
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
