@@ -1,6 +1,12 @@
 <template>
   <div class="dashboard">
     <v-container class="my-5">
+      <v-row>
+        <v-col><v-icon>mdi-account</v-icon></v-col>
+        <v-col></v-col>
+        <v-col></v-col>
+      </v-row>
+
       <h1 class="subtitle-1 grey--text">Dashboard</h1>
       <v-divider></v-divider>
       <v-row class="ma-3 mb-1">
