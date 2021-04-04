@@ -7,6 +7,7 @@
           v-for="column in layout"
           :key="column.name"
           :cols="column.columnsWide"
+          ><v-icon v-if="column.icon">{{ column.icon }}</v-icon
           >{{ column.name }}</v-col
         >
         <v-col><v-icon>mdi-account</v-icon></v-col>
@@ -57,8 +58,7 @@ export default {
   data() {
     return {
       layout: [
-        { name: 'Icon', columnsWide: 2 },
-        { name: 'Name', columnsWide: 2 },
+        { name: 'Name', columnsWide: 2, icon: 'mdi-account' },
         { name: 'Email', columnsWide: 2 },
         { name: 'Phone', columnsWide: 2 },
         { name: 'Birthday', columnsWide: 2 },
