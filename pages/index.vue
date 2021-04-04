@@ -42,19 +42,20 @@ export default {
   data() {
     return {
       layout: [
-        { icon: 'mdi-account', columnsWide: 2 },
-        { name: 'Name', columnsWide: 2 },
-        { name: 'Email', columnsWide: 2 },
-        { name: 'Phone', columnsWide: 2 },
-        { name: 'Birthday', columnsWide: 2 },
-        { name: 'Last Contact', columnsWide: 2 },
+        { icon: 'mdi-account', columnsWide: 2, id: 'picture' },
+        { name: 'Name', columnsWide: 2, id: 'name' },
+        { name: 'Email', columnsWide: 2, id: 'email' },
+        { name: 'Phone', columnsWide: 2, id: 'phone' },
+        { name: 'Birthday', columnsWide: 2, id: 'birthday' },
+        { name: 'Last Contact', columnsWide: 2, id: 'lastContact' },
       ],
       contacts: [
         {
-          image: '',
-          fullName: 'Braden Wong',
+          picture: '',
+          name: 'Braden Wong',
           email: 'braden.wong@yale.edu',
           phone: '6266274599',
+          birthday: 'July 12',
           lastContact: 'August 8',
         },
       ],
