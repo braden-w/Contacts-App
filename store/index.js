@@ -12,8 +12,8 @@ export const actions = {
     return await bindFirestoreRef('userdata', ref, { wait: true })
   }),
   unbindUserDataBetweenFirestoreAndVuex: firestoreAction(function ({
-    unbindFirestoreRef
+    unbindFirestoreRef,
   }) {
     unbindFirestoreRef('userdata', false)
-  })
+  }),
 }
