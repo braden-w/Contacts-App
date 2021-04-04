@@ -55,7 +55,11 @@
 </template>
 
 <script>
+import TheGoogleLoginButton from '@/components/TheGoogleLoginButton.vue'
 export default {
+  components: {
+    TheGoogleLoginButton,
+  },
   data() {
     return {
       clipped: false,
