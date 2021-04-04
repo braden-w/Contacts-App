@@ -28,7 +28,7 @@
               mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}
             </v-icon>
           </v-list-item-action>
-          <v-list-item-content>Expand</v-list-item-content>
+          <v-list-item-content>Collapse</v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
