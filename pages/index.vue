@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard">
+  <v-app class="dashboard">
     <v-container class="my-5">
       <v-row>
         <v-col><v-icon>mdi-account</v-icon></v-col>
@@ -58,7 +58,7 @@
         </v-card></v-container
       >
     </v-container>
-  </div>
+  </v-app>
 </template>
 
 <script>
