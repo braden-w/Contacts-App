@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       layout: [
-        { icon: 'mdi-account', columnsWide: 0.5, id: 'picture' },
+        { icon: 'mdi-account', columnsWide: 1, id: 'picture' },
         { name: 'Name', columnsWide: 2.5, id: 'name' },
         { name: 'Email', columnsWide: 2, id: 'email' },
         { name: 'Phone', columnsWide: 2, id: 'phone' },
