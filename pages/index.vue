@@ -1,7 +1,7 @@
 <template>
   <v-app class="dashboard">
     <v-container class="my-5">
-      <v-row>
+      <v-row class="pa-3">
         <v-col
           v-for="column in layout"
           :key="column.name"
