@@ -2,13 +2,13 @@
   <v-app class="dashboard">
     <v-container class="my-5">
       <v-row>
-        <v-col><v-icon>mdi-account</v-icon></v-col>
         <v-col
           v-for="column in layout"
           :key="column.name"
           :cols="column.columnsWide"
-          ><v-icon v-if="column.icon">{{ column.icon }}</v-icon
-          >{{ column.name }}</v-col
+        >
+          <v-icon v-if="column.icon">{{ column.icon }}</v-icon>
+          <h1 v-else class="caption">{{ column.name }}</h1></v-col
         >
         <v-col><v-icon>mdi-account</v-icon></v-col>
       </v-row>
@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       layout: [
-        { name: 'Name', columnsWide: 2, icon: 'mdi-account' },
+        { icon: 'mdi-account', columnsWide: 2 },
         { name: 'Email', columnsWide: 2 },
         { name: 'Phone', columnsWide: 2 },
         { name: 'Birthday', columnsWide: 2 },
