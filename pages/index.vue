@@ -10,7 +10,6 @@
           <v-icon v-if="column.icon">{{ column.icon }}</v-icon>
           <h1 v-else class="caption">{{ column.name }}</h1></v-col
         >
-        <v-col><v-icon>mdi-account</v-icon></v-col>
       </v-row>
 
       <h1 class="subtitle-1 grey--text">Dashboard</h1>
