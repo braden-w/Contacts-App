@@ -40,8 +40,8 @@ export default {
   data() {
     return {
       layout: [
-        { icon: 'mdi-account', columnsWide: 2, id: 'picture' },
-        { name: 'Name', columnsWide: 2, id: 'name' },
+        { icon: 'mdi-account', columnsWide: 0.5, id: 'picture' },
+        { name: 'Name', columnsWide: 2.5, id: 'name' },
         { name: 'Email', columnsWide: 2, id: 'email' },
         { name: 'Phone', columnsWide: 2, id: 'phone' },
         { name: 'Birthday', columnsWide: 2, id: 'birthday' },
