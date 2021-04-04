@@ -21,7 +21,16 @@
           :key="contact.fullName"
           class="pa-3"
         >
-          <v-row :class="`contact ${contact.status}`">
+          <v-row>
+            <v-col
+              v-for="column in layout"
+              :key="column"
+              :cols="column.columnsWide"
+            >
+              <v-icon v-if="column.icon">{{ column.icon }}</v-icon>
+              <h1 v-else class="caption">{{ column.name }}</h1>
+            </v-col>
+
             <v-col cols="12" md="6">
               <div class="caption grey--text">Project Title</div>
               <div>{{ contact.title }}</div>
