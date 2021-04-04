@@ -30,30 +30,6 @@
               <v-icon v-if="column.icon">{{ column.icon }}</v-icon>
               <h1 v-else class="caption">{{ column.name }}</h1>
             </v-col>
-
-            <v-col cols="12" md="6">
-              <div class="caption grey--text">Project Title</div>
-              <div>{{ contact.title }}</div>
-            </v-col>
-            <v-col cols="6" md="2">
-              <div class="caption grey--text">Person</div>
-              <div>{{ contact.person }}</div>
-            </v-col>
-            <v-col cols="6" md="2">
-              <div class="caption grey--text">Due</div>
-              <div>{{ contact.due }}</div>
-            </v-col>
-            <v-col cols="22" md="2">
-              <div id="chips-container" class="right">
-                <v-chip
-                  small
-                  my-auto
-                  :class="`${contact.status} caption white--text `"
-                >
-                  {{ contact.status }}
-                </v-chip>
-              </div>
-            </v-col>
           </v-row>
         </v-card></v-container
       >
@@ -67,6 +43,7 @@ export default {
     return {
       layout: [
         { icon: 'mdi-account', columnsWide: 2 },
+        { name: 'Name', columnsWide: 2 },
         { name: 'Email', columnsWide: 2 },
         { name: 'Phone', columnsWide: 2 },
         { name: 'Birthday', columnsWide: 2 },
