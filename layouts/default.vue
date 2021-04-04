@@ -8,6 +8,7 @@
       app
     >
       <v-list>
+        <v-list-item><TheGoogleLoginButton /></v-list-item>
         <v-list-item
           v-for="(page, i) in pages"
           :key="i"
