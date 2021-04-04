@@ -3,9 +3,12 @@
     <v-container class="my-5">
       <v-row>
         <v-col><v-icon>mdi-account</v-icon></v-col>
-        <v-col v-for="column in layout" :key="column.name">{{
-          column.name
-        }}</v-col>
+        <v-col
+          v-for="column in layout"
+          :key="column.name"
+          :cols="column.columnsWide"
+          >{{ column.name }}</v-col
+        >
         <v-col><v-icon>mdi-account</v-icon></v-col>
       </v-row>
 
