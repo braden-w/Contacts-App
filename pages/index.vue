@@ -14,11 +14,7 @@
       <v-divider />
 
       <v-container fluid>
-        <v-card
-          v-for="contact in contacts"
-          :key="contact.fullName"
-          class="pa-3"
-        >
+        <v-card v-for="contact in contacts" :key="contact.name" class="pa-3">
           <v-row>
             <v-col
               v-for="column in layout"
