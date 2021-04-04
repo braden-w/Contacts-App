@@ -1,99 +1,60 @@
 <template>
-  <div class="dashboard">
+  <v-app class="dashboard">
     <v-container class="my-5">
-      <h1 class="subtitle-1 grey--text">Dashboard</h1>
-      <v-divider></v-divider>
-      <v-row class="ma-3 mb-1">
-        <v-tooltip v-for="sort in sorts" :key="sort.query" top>
-          <template #activator="{ on: onButton }">
-            <v-btn
-              small
-              color="light-grey"
-              v-on="onButton"
-              @click="sortBy(sort.query)"
-              ><v-icon left>{{ sort.icon }}</v-icon>
-              <span class="caption text-lowercase">By {{ sort.title }}</span>
-            </v-btn>
-          </template>
-
-          <span>Sort projects by {{ sort.title }}</span>
-        </v-tooltip>
+      <v-row class="pa-3">
+        <v-col
+          v-for="column in layout"
+          :key="column.name"
+          :cols="column.columnsWide"
+        >
+          <v-icon v-if="column.icon">{{ column.icon }}</v-icon>
+          <h1 v-else class="caption">{{ column.name }}</h1>
+        </v-col>
       </v-row>
-      <v-container fluid
-        ><v-card v-for="project in projects" :key="project.title" class="pa-3">
-          <v-row :class="`project ${project.status}`">
-            <v-col cols="12" md="6">
-              <div class="caption grey--text">Project Title</div>
-              <div>{{ project.title }}</div>
-            </v-col>
-            <v-col cols="6" md="2">
-              <div class="caption grey--text">Person</div>
-              <div>{{ project.person }}</div>
-            </v-col>
-            <v-col cols="6" md="2">
-              <div class="caption grey--text">Due</div>
-              <div>{{ project.due }}</div>
-            </v-col>
-            <v-col cols="22" md="2">
-              <div id="chips-container" class="right">
-                <v-chip
-                  small
-                  my-auto
-                  :class="`${project.status} caption white--text `"
-                >
-                  {{ project.status }}
-                </v-chip>
-              </div>
-            </v-col>
-          </v-row>
-        </v-card></v-container
-      >
+      <v-divider />
+
+      <v-card v-for="contact in contacts" :key="contact.name" class="pa-3">
+        <v-row>
+          <v-col
+            v-for="column in layout"
+            :key="column"
+            :cols="column.columnsWide"
+          >
+            <v-icon v-if="column.icon">{{ contact[column.id] }}</v-icon>
+            <h1 v-else class="caption">{{ contact[column.id] }}</h1>
+          </v-col>
+        </v-row>
+      </v-card>
     </v-container>
-  </div>
+  </v-app>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      projects: [
+      layout: [
+        { icon: 'mdi-account', columnsWide: 1, id: 'picture' },
+        { name: 'Name', columnsWide: 2.5, id: 'name' },
+        { name: 'Email', columnsWide: 2, id: 'email' },
+        { name: 'Phone', columnsWide: 2, id: 'phone' },
+        { name: 'Birthday', columnsWide: 2, id: 'birthday' },
+        { name: 'Last Contact', columnsWide: 2, id: 'lastContact' },
+      ],
+      contacts: [
         {
-          title: 'Design a new website',
-          person: 'Braden Wong',
-          due: '1st Jan 2019',
-          status: 'ongoing',
-          content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!',
-        },
-        {
-          title: 'Code up the homepage',
-          person: 'Jason',
-          due: '10th Jan 2019',
-          status: 'complete',
-          content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!',
-        },
-        {
-          title: 'Design video thumbnails',
-          person: 'Ruobin',
-          due: '20th Dec 2018',
-          status: 'complete',
-          content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!',
-        },
-        {
-          title: 'Create a community forum',
-          person: 'Sam',
-          due: '20th Oct 2018',
-          status: 'overdue',
-          content:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!',
+          picture: '',
+          name: 'Braden Wong',
+          email: 'braden.wong@yale.edu',
+          phone: '6266274599',
+          birthday: 'July 12',
+          lastContact: 'August 8',
         },
       ],
       sorts: [
-        { icon: 'mdi-folder', title: 'project name', query: 'title' },
+        { icon: 'mdi-folder', title: 'contact name', query: 'title' },
         { icon: 'mdi-account', title: 'person', query: 'person' },
-        { icon: 'mdi-folder', title: 'project status', query: 'status' },
+        { icon: 'mdi-folder', title: 'contact status', query: 'status' },
       ],
     }
   },
@@ -114,23 +75,5 @@ export default {
   },
 }
 </script>
-<style>
-.project.complete {
-  border-left: 4px solid #3cd1c2;
-}
-.project.ongoing {
-  border-left: 4px solid orange;
-}
-.project.overdue {
-  border-left: 4px solid tomato;
-}
-#chips-container .complete {
-  background: #3cd1c2;
-}
-#chips-container .ongoing {
-  background: #ffaa2c;
-}
-#chips-container .overdue {
-  background: #f83e70;
-}
-</style>
+
+<style></style>
