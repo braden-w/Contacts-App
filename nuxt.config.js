@@ -46,7 +46,12 @@ export default {
           appId: process.env.FIREBASE_APP_ID,
         },
         services: {
-          auth: true, // Just as example. Can be any other service.
+          auth: {
+            initialize: {
+              onAuthStateChangedAction: 'auth/onAuthStateChangedAction',
+              subscribeManually: false,
+            },
+          },
         },
       },
     ],
