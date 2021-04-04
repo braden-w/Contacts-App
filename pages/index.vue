@@ -11,8 +11,6 @@
           <h1 v-else class="caption">{{ column.name }}</h1></v-col
         >
       </v-row>
-
-      <h1 class="subtitle-1 grey--text">Dashboard</h1>
       <v-divider></v-divider>
 
       <v-container fluid>
