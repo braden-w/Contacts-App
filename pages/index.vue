@@ -12,22 +12,7 @@
 
       <h1 class="subtitle-1 grey--text">Dashboard</h1>
       <v-divider></v-divider>
-      <v-row class="ma-3 mb-1">
-        <v-tooltip v-for="sort in sorts" :key="sort.query" top>
-          <template #activator="{ on: onButton }">
-            <v-btn
-              small
-              color="light-grey"
-              v-on="onButton"
-              @click="sortBy(sort.query)"
-              ><v-icon left>{{ sort.icon }}</v-icon>
-              <span class="caption text-lowercase">By {{ sort.title }}</span>
-            </v-btn>
-          </template>
 
-          <span>Sort projects by {{ sort.title }}</span>
-        </v-tooltip>
-      </v-row>
       <v-container fluid
         ><v-card v-for="project in projects" :key="project.title" class="pa-3">
           <v-row :class="`project ${project.status}`">
@@ -123,23 +108,5 @@ export default {
   },
 }
 </script>
-<style>
-.project.complete {
-  border-left: 4px solid #3cd1c2;
-}
-.project.ongoing {
-  border-left: 4px solid orange;
-}
-.project.overdue {
-  border-left: 4px solid tomato;
-}
-#chips-container .complete {
-  background: #3cd1c2;
-}
-#chips-container .ongoing {
-  background: #ffaa2c;
-}
-#chips-container .overdue {
-  background: #f83e70;
-}
-</style>
+
+<style></style>
