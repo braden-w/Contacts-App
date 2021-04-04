@@ -13,7 +13,11 @@
       <v-divider></v-divider>
 
       <v-container fluid>
-        <v-card v-for="contact in projects" :key="contact.title" class="pa-3">
+        <v-card
+          v-for="contact in contacts"
+          :key="contact.fullName"
+          class="pa-3"
+        >
           <v-row :class="`contact ${contact.status}`">
             <v-col cols="12" md="6">
               <div class="caption grey--text">Project Title</div>
@@ -60,8 +64,7 @@ export default {
       contacts: [
         {
           image: '',
-          firstName: 'Braden',
-          lastName: 'Wong',
+          fullName: 'Braden Wong',
           email: 'braden.wong@yale.edu',
           phone: '6266274599',
           lastContact: 'August 8',
