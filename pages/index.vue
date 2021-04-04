@@ -50,6 +50,13 @@
 export default {
   data() {
     return {
+      layout: [
+        { name: 'Name', columnsWide: 2 },
+        { name: 'Email', columnsWide: 2 },
+        { name: 'Phone', columnsWide: 2 },
+        { name: 'Birthday', columnsWide: 2 },
+        { name: 'Last Contact', columnsWide: 2 },
+      ],
       projects: [
         {
           title: 'Design a new website',
