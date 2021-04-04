@@ -2,12 +2,10 @@
   <v-app class="dashboard">
     <v-container class="my-5">
       <v-row>
+        <v-col v-for="column in layout" :key="column.name">{{
+          column.name
+        }}</v-col>
         <v-col><v-icon>mdi-account</v-icon></v-col>
-        <v-col>Name</v-col>
-        <v-col>Email</v-col>
-        <v-col>Phone</v-col>
-        <v-col>Birthday</v-col>
-        <v-col>Last Contact</v-col>
       </v-row>
 
       <h1 class="subtitle-1 grey--text">Dashboard</h1>
