@@ -2,6 +2,7 @@
   <v-app class="dashboard">
     <v-container class="my-5">
       <v-row>
+        <v-col><v-icon>mdi-account</v-icon></v-col>
         <v-col v-for="column in layout" :key="column.name">{{
           column.name
         }}</v-col>
@@ -49,6 +50,7 @@ export default {
   data() {
     return {
       layout: [
+        { name: 'Icon', columnsWide: 2 },
         { name: 'Name', columnsWide: 2 },
         { name: 'Email', columnsWide: 2 },
         { name: 'Phone', columnsWide: 2 },
