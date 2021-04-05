@@ -129,7 +129,7 @@ export default {
     ]),
   },
   methods: {
-    ...mapActions({ submit: 'submit' }),
+    ...mapActions({ submit: 'submitBuffer' }),
   },
 }
 </script>
