@@ -15,23 +15,21 @@
         <v-card-text>
           <v-form ref="form">
             <v-text-field
-              v-model="form.name"
+              v-model="name"
               label="Contact Name"
               prepend-icon="mdi-account-circle"
               required
             >
             </v-text-field>
             <v-text-field
-              v-model="form.email"
-              :rules="form.emailRules"
+              v-model="email"
               label="Email"
               prepend-icon="mdi-email"
               required
             >
             </v-text-field>
             <v-text-field
-              v-model="form.phone"
-              :rules="form.phoneRules"
+              v-model="phone"
               label="Phone Number"
               prepend-icon="mdi-phone"
               required
@@ -47,7 +45,7 @@
             >
               <template #activator="{ on, attrs }">
                 <v-text-field
-                  v-model="form.birthday"
+                  v-model="birthday"
                   label="Birthday"
                   prepend-icon="mdi-cake"
                   readonly
@@ -56,7 +54,7 @@
                 ></v-text-field>
               </template>
               <v-date-picker
-                v-model="form.birthday"
+                v-model="birthday"
                 @input="datePickerBirthday = false"
               ></v-date-picker>
             </v-menu>
@@ -70,7 +68,7 @@
             >
               <template #activator="{ on, attrs }">
                 <v-text-field
-                  v-model="form.birthday"
+                  v-model="lastContact"
                   label="Last Contact"
                   prepend-icon="mdi-calendar"
                   readonly
@@ -79,7 +77,7 @@
                 ></v-text-field>
               </template>
               <v-date-picker
-                v-model="form.lastContact"
+                v-model="lastContact"
                 @input="datePickerLastContact = false"
               ></v-date-picker>
             </v-menu>
@@ -103,6 +101,9 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+import { mapFields } from 'vuex-map-fields'
+
 export default {
   data() {
     return {
@@ -115,17 +116,23 @@ export default {
       datePickerBirthday: false,
       datePickerLastContact: false,
       dialogue: false,
-      form: {
-        picture: '',
-        name: '',
-        email: '',
-        phone: '',
-        birthday: '',
-        lastContact: '',
-        emailRules: '',
-        phoneRules: '',
-      },
     }
+  },
+  computed: {
+    ...mapFields([
+      'picture',
+      'name',
+      'email',
+      'phone',
+      'birthday',
+      'lastContact',
+    ]),
+  },
+  methods: {
+    submit() {
+      this.$store.dispatch('submitBuffer')
+      this.dialogue = false
+    },
   },
 }
 </script>

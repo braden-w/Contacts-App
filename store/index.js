@@ -1,7 +1,17 @@
 import { vuexfireMutations, firestoreAction } from 'vuexfire'
-export const state = () => ({})
+import { getField, updateField } from 'vuex-map-fields'
 
-export const mutations = { ...vuexfireMutations }
+export const state = () => ({
+  picture: '',
+  name: '',
+  email: '',
+  phone: '',
+  birthday: '',
+  lastContact: '',
+})
+
+export const getters = { getField }
+export const mutations = { ...vuexfireMutations, updateField }
 
 export const actions = {
   bindUserDataBetweenFirestoreAndVuex: firestoreAction(async function (
@@ -19,4 +29,27 @@ export const actions = {
   }) {
     unbindFirestoreRef('userdata', false)
   }),
+  async submitBuffer({ state, rootState }) {
+    if (!state.name) return
+    try {
+      await this.$fire.firestore
+        .collection('users')
+        .doc(rootState.auth.userCredentials.userID)
+        .collection('contacts')
+        .doc(state.name)
+        .set(
+          {
+            picture: state.picture,
+            name: state.name,
+            email: state.email,
+            phone: state.phone,
+            birthday: state.birthday,
+            lastContact: state.lastContact,
+          },
+          { merge: true }
+        )
+    } catch (err) {
+      alert(err)
+    }
+  },
 }
