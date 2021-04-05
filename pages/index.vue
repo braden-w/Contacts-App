@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -41,7 +42,7 @@ export default {
         { name: 'Birthday', columnsWide: 2, id: 'birthday' },
         { name: 'Last Contact', columnsWide: 2, id: 'lastContact' },
       ],
-      contacts: [
+      /* contacts: [
         {
           picture: '',
           name: 'Braden Wong',
@@ -50,13 +51,16 @@ export default {
           birthday: 'July 12',
           lastContact: 'August 8',
         },
-      ],
+      ], */
       sorts: [
         { icon: 'mdi-folder', title: 'contact name', query: 'title' },
         { icon: 'mdi-account', title: 'person', query: 'person' },
         { icon: 'mdi-folder', title: 'contact status', query: 'status' },
       ],
     }
+  },
+  computed: {
+    ...mapState(['contacts']),
   },
   created() {
     this.$fire.firestore.collection('projects').onSnapshot((res) => {
