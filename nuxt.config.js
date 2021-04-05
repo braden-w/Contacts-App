@@ -34,6 +34,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv',
     [
       '@nuxtjs/firebase',
       {
@@ -48,7 +49,7 @@ export default {
         services: {
           auth: {
             initialize: {
-              // onAuthStateChangedAction: 'auth/onAuthStateChangedAction',
+              onAuthStateChangedAction: 'auth/onAuthStateChangedAction',
               subscribeManually: false,
             },
           },
