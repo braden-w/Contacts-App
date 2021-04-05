@@ -11,6 +11,18 @@ export const getters = { getField }
 
 export const mutations = {
   updateField,
+  updateBuffer(state, payload) {
+    Object.keys(payload).forEach((key) => {
+      state[key] = payload[key]
+    })
+  },
+  clearBuffer(state) {
+    Object.keys(state).forEach((key) => {
+      state[key] = ''
+    })
+  },
+}
+
 export const actions = {
   async submitBuffer({ state, commit, rootState }) {
     if (!state.name) return
