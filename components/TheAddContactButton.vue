@@ -23,7 +23,6 @@
             </v-text-field>
             <v-text-field
               v-model="email"
-              :rules="emailRules"
               label="Email"
               prepend-icon="mdi-email"
               required
@@ -31,7 +30,6 @@
             </v-text-field>
             <v-text-field
               v-model="phone"
-              :rules="phoneRules"
               label="Phone Number"
               prepend-icon="mdi-phone"
               required
