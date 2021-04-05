@@ -8,8 +8,6 @@ export const state = () => ({
   phone: '',
   birthday: '',
   lastContact: '',
-  emailRules: '',
-  phoneRules: '',
 })
 
 export const getters = { getField }
@@ -31,20 +29,15 @@ export const actions = {
   }) {
     unbindFirestoreRef('userdata', false)
   }),
-  async submitBuffer({ commit }) {
-    commit('setSigningIn', true)
+  async submitBuffer({ state, rootState }) {
     try {
-      // Use fireAuthObj to refer to service instance itself rather than auth service https://github.com/nuxt-community/firebase-module/issues/192
-      const provider = new this.$fireModule.auth.GoogleAuthProvider()
-      // Add additional permission, per https://developers.google.com/identity/protocols/oauth2/scopess
-      provider.addScope('profile') // View basic user profile info
-      provider.addScope('email') // View email address
-      await this.$fire.auth.signInWithPopup(provider)
-      commit('setSignedIn', true)
+      await this.$fire.firestore
+        .collection('users')
+        .doc(rootState.auth.userCredentials.userID)
+        .set(state, { merge: true })
     } catch (err) {
       alert(err)
     } finally {
-      commit('setSigningIn', false)
     }
   },
 }
