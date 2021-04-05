@@ -47,6 +47,8 @@ Vuex is the source of truth for this project, with the following namespaced modu
    - VuexFire bindings: VuexFire mutations create a one-way binding from a user's contacts on Firestore with the contacts in the Vuex store
 
 2. Auth: This stores user a user's login status and credentials pulled from Firebase Auth
+
+3. Buffer: This stores information of the currently edited contact, which is displayed when the modal is opened. It is autopopulated when a contact is clicked, and cleared when the "Add Contact" is clicked.
 - Persistent login
 - Upload (with Firebase storage)
 
