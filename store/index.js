@@ -30,6 +30,7 @@ export const actions = {
     unbindFirestoreRef('userdata', false)
   }),
   async submitBuffer({ state, rootState }) {
+    if (!state.name) return
     try {
       await this.$fire.firestore
         .collection('users')
