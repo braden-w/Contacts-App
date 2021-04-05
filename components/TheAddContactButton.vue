@@ -14,17 +14,17 @@
               v-model="form.email"
               :rules="form.emailRules"
               name="email"
-              label="Username"
+              label="Contact Name"
               prepend-icon="mdi-account-circle"
               required
             >
-            </v-text-field
-            ><v-text-field
+            </v-text-field>
+            <v-text-field
               v-model="form.email"
               :rules="form.emailRules"
               name="email"
-              label="Username"
-              prepend-icon="mdi-account-circle"
+              label="Email"
+              prepend-icon="mdi-email"
               required
             >
             </v-text-field>
@@ -34,7 +34,7 @@
               accept="image/png, image/jpeg, image/bmp"
               placeholder="Pick an avatar"
               prepend-icon="mdi-camera"
-              label="Avatar"
+              label="Image"
             ></v-file-input>
           </v-form>
         </v-card-text>
