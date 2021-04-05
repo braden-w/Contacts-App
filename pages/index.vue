@@ -1,6 +1,21 @@
 <template>
   <v-app class="dashboard">
-    <v-container class="my-5">
+    <v-container v-if="!signedIn" class="my-5">
+      <v-row class="pa-3">
+        <v-col
+          v-for="column in layout"
+          :key="column.name"
+          :cols="column.columnsWide"
+        >
+          <v-icon v-if="column.icon">{{ column.icon }}</v-icon>
+          <h1 v-else class="caption">{{ column.name }}</h1>
+        </v-col>
+      </v-row>
+      <v-card class="mx-auto pa-4" max-width="600">
+        <h1 class="heading-1">Please sign in with Google</h1>
+      </v-card>
+    </v-container>
+    <v-container v-else class="my-5">
       <v-row class="pa-3">
         <v-col
           v-for="column in layout"
