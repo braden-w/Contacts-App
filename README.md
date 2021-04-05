@@ -33,7 +33,7 @@ You can toggle minified mode using the lightbulb button on the top right:
 
 <img src="assets/readme/login.png">
 
-## Features
+## Design
 
 ### Vuex
 
