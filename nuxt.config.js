@@ -49,7 +49,7 @@ export default {
         services: {
           auth: {
             initialize: {
-              // onAuthStateChangedAction: 'auth/onAuthStateChangedAction',
+              onAuthStateChangedAction: 'auth/onAuthStateChangedAction',
               subscribeManually: false,
             },
           },
