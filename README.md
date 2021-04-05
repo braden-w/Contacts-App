@@ -24,5 +24,3 @@ $ npm run generate
 # serve using statically generated project
 $ npm run start
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
