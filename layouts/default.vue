@@ -8,20 +8,34 @@
       app
     >
       <v-list>
-        <v-container
-          v-if="signedIn"
-          class="d-flex flex-column align-center justify-center"
-        >
-          <v-avatar size="100">
-            <v-img
-              :src="userCredentials.photoURL"
-              :alt="userCredentials.displayName"
-            />
-          </v-avatar>
-          <h1 class="subtitle-1 mt-1">{{ userCredentials.displayName }}</h1>
-          <h2 class="subtitle-2 mt-1">{{ userCredentials.university }}</h2>
-        </v-container>
-        <TheGoogleLoginButton />
+        <v-list-item>
+          <v-list-item-action v-if="miniVariant">
+            <v-container
+              v-if="signedIn"
+              class="d-flex flex-column align-center justify-center"
+            >
+              <v-avatar size="30">
+                <v-img :src="userCredentials.photoURL" />
+              </v-avatar>
+            </v-container>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-container
+              v-if="signedIn"
+              class="d-flex flex-column align-center justify-center"
+            >
+              <v-avatar size="100">
+                <v-img
+                  :src="userCredentials.photoURL"
+                  :alt="userCredentials.displayName"
+                />
+              </v-avatar>
+              <h1 class="subtitle-1 mt-1">{{ userCredentials.displayName }}</h1>
+              <h2 class="subtitle-2 mt-1">{{ userCredentials.university }}</h2>
+            </v-container>
+          </v-list-item-content>
+        </v-list-item>
+
         <v-list-item
           v-for="(page, i) in pages"
           :key="i"
@@ -44,6 +58,7 @@
           </v-list-item-action>
           <v-list-item-content>Collapse</v-list-item-content>
         </v-list-item>
+        <TheGoogleLoginButton />
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
