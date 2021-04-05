@@ -44,7 +44,7 @@ Vuex is the source of truth for this project, with the following namespaced modu
    - Dialog: It toggles whether to overlay the contact modal or not
    - Editing mode: It toggles whether the contact modal's UI should display text for editing or creating a new contact
    - Contacts: The contacts of the users, stored as an array of contact objects
-   - VuexFire bindings: VuexFire mutations create a one-way binding from a user's contacts on Firestore with the contacts in the Vuex store
+   - VuexFire bindings: VuexFire mutations create a one-way binding from a user's contacts on Firestore with the contacts in the Vuex store. More elaborated [in the Vuexfire section](###Vuexfire)
 
 2. Auth: This stores user a user's login status and credentials pulled from Firebase Auth
 
