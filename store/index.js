@@ -3,6 +3,7 @@ import { vuexfireMutations, firestoreAction } from 'vuexfire'
 export const state = () => ({
   edit: false,
   dialog: false,
+  contacts: [],
 })
 
 export const mutations = {
