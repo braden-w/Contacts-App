@@ -39,7 +39,6 @@ export const actions = {
         .set(state, { merge: true })
     } catch (err) {
       alert(err)
-    } finally {
     }
   },
 }
