@@ -103,6 +103,8 @@
 </template>
 
 <script>
+import { mapFields } from 'vuex-map-fields'
+
 export default {
   data() {
     return {
@@ -117,5 +119,6 @@ export default {
       dialogue: false,
     }
   },
+  ...mapFields(['picture', 'name', 'email', 'phone', 'birthday']),
 }
 </script>
