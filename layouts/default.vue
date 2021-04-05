@@ -84,10 +84,12 @@
 
 <script>
 import TheGoogleLoginButton from '@/components/TheGoogleLoginButton.vue'
+import TheAddContactButton from '@/components/TheAddContactButton.vue'
 import { mapState } from 'vuex'
 export default {
   components: {
     TheGoogleLoginButton,
+    TheAddContactButton,
   },
   data() {
     return {
