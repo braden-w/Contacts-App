@@ -28,6 +28,14 @@
               required
             >
             </v-text-field>
+            <v-file-input
+              :rules="rules"
+              chips
+              accept="image/png, image/jpeg, image/bmp"
+              placeholder="Pick an avatar"
+              prepend-icon="mdi-camera"
+              label="Avatar"
+            ></v-file-input>
           </v-form>
         </v-card-text>
         <v-card-actions class="justify-end">
@@ -42,6 +50,12 @@
 export default {
   data() {
     return {
+      rules: [
+        (value) =>
+          !value ||
+          value.size < 2000000 ||
+          'Avatar size should be less than 2 MB!',
+      ],
       form: {
         picture: '',
         name: '',
