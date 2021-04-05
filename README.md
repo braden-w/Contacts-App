@@ -57,6 +57,13 @@ Vuexfire is used to set a real-time one way binding from a user's contacts on Fi
 When adding and editing contacts, the changes are written to Firestore directly, which are then automatically pulled and updated in the Vuex store, which subsequently updates the application.
 
 Note that Vuex is the source of truth for most other values, such as the buffer
+
+## Other technologies
+
+### mapFields
+
+You may encounter the mapFields plugin, which is used to simplify a two-way data-binding with a form. This is used to synchronize the modal values with the values stored in the **buffer** module of the Vuex store
+
 - Persistent login
 - Upload (with Firebase storage)
 
