@@ -129,7 +129,10 @@ export default {
     ]),
   },
   methods: {
-    ...mapActions({ submit: 'submitBuffer' }),
+    submit() {
+      this.$store.dispatch('submitBuffer')
+      this.dialogue = false
+    },
   },
 }
 </script>
