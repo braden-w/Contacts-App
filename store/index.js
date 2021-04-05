@@ -1,4 +1,6 @@
 import { vuexfireMutations, firestoreAction } from 'vuexfire'
+import { getField, updateField } from 'vuex-map-fields'
+
 export const state = () => ({
   picture: '',
   name: '',
@@ -10,7 +12,8 @@ export const state = () => ({
   phoneRules: '',
 })
 
-export const mutations = { ...vuexfireMutations }
+export const getters = { getField }
+export const mutations = { ...vuexfireMutations, updateField }
 
 export const actions = {
   bindUserDataBetweenFirestoreAndVuex: firestoreAction(async function (
