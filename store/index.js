@@ -5,8 +5,13 @@ export const state = () => ({
   dialog: false,
 })
 
-export const getters = { getField }
-export const mutations = { ...vuexfireMutations, updateField }
+  activateModal(state) {
+    state.dialog = true
+  },
+  deactivateModal(state) {
+    state.dialog = false
+  },
+}
 
 export const actions = {
   bindUserDataBetweenFirestoreAndVuex: firestoreAction(async function (
