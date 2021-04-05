@@ -11,8 +11,7 @@
         <v-card-text>
           <v-form ref="form">
             <v-text-field
-              v-model="form.email"
-              :rules="form.emailRules"
+              v-model="form.name"
               label="Contact Name"
               prepend-icon="mdi-account-circle"
               required
@@ -27,8 +26,8 @@
             >
             </v-text-field>
             <v-text-field
-              v-model="form.email"
-              :rules="form.emailRules"
+              v-model="form.phone"
+              :rules="form.phoneRules"
               label="Phone Number"
               prepend-icon="mdi-email"
               required
@@ -96,6 +95,8 @@ export default {
         phone: '',
         birthday: '',
         lastContact: '',
+        emailRules: '',
+        phoneRules: '',
       },
     }
   },
