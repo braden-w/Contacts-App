@@ -35,6 +35,7 @@
             </v-container>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item v-if="signedIn">
           <v-container>
             <TheAddContactButton :mini="miniVariant" />
           </v-container>
@@ -95,7 +96,7 @@ export default {
   data() {
     return {
       clipped: false,
-      drawer: false,
+      drawer: true,
       pages: [
         {
           icon: 'mdi-apps',
