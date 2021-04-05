@@ -58,6 +58,9 @@ export default {
       ],
     }
   },
+  computed: {
+    ...mapState(['contacts']),
+  },
   created() {
     this.$fire.firestore.collection('projects').onSnapshot((res) => {
       const changes = res.docChanges()
