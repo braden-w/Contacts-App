@@ -1,7 +1,7 @@
 <template>
   <v-dialog transition="dialog-bottom-transition" max-width="600">
     <template #activator="{ on, attrs }">
-      <v-btn color="primary" v-bind="attrs" v-on="on">From the bottom</v-btn>
+      <v-btn color="primary" v-bind="attrs" v-on="on">Add Contact</v-btn>
     </template>
     <template #default="dialog">
       <v-card>
