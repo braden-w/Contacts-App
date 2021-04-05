@@ -5,11 +5,19 @@ export const state = () => ({
   dialog: false,
 })
 
+export const mutations = {
+  ...vuexfireMutations,
   activateModal(state) {
     state.dialog = true
   },
   deactivateModal(state) {
     state.dialog = false
+  },
+  addMode(state) {
+    state.edit = false
+  },
+  editMode(state) {
+    state.edit = true
   },
 }
 
