@@ -29,7 +29,7 @@
               v-model="form.phone"
               :rules="form.phoneRules"
               label="Phone Number"
-              prepend-icon="mdi-email"
+              prepend-icon="mdi-phone"
               required
             >
             </v-text-field>
@@ -45,7 +45,7 @@
                 <v-text-field
                   v-model="form.birthday"
                   label="Birthday"
-                  prepend-icon="mdi-calendar"
+                  prepend-icon="mdi-cake"
                   readonly
                   v-bind="attrs"
                   v-on="on"
