@@ -87,6 +87,7 @@ export default {
   },
   computed: {
     ...mapState(['contacts']),
+    ...mapState('auth', ['signedIn']),
   },
   created() {
     this.$fire.firestore.collection('projects').onSnapshot((res) => {
