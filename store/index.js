@@ -1,5 +1,14 @@
 import { vuexfireMutations, firestoreAction } from 'vuexfire'
-export const state = () => ({})
+export const state = () => ({
+  picture: '',
+  name: '',
+  email: '',
+  phone: '',
+  birthday: '',
+  lastContact: '',
+  emailRules: '',
+  phoneRules: '',
+})
 
 export const mutations = { ...vuexfireMutations }
 

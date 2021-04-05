@@ -115,16 +115,6 @@ export default {
       datePickerBirthday: false,
       datePickerLastContact: false,
       dialogue: false,
-      form: {
-        picture: '',
-        name: '',
-        email: '',
-        phone: '',
-        birthday: '',
-        lastContact: '',
-        emailRules: '',
-        phoneRules: '',
-      },
     }
   },
 }
