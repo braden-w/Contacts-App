@@ -35,7 +35,6 @@
             </v-container>
           </v-list-item-content>
         </v-list-item>
-
         <v-list-item
           v-for="(page, i) in pages"
           :key="i"
@@ -58,7 +57,10 @@
           </v-list-item-action>
           <v-list-item-content>Collapse</v-list-item-content>
         </v-list-item>
-        <TheGoogleLoginButton />
+        <v-list-item
+          ><v-list-item-action v-if="miniVariant"></v-list-item-action
+          ><v-list-item-content><TheGoogleLoginButton /></v-list-item-content
+        ></v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
