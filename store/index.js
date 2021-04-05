@@ -2,6 +2,7 @@ import { vuexfireMutations, firestoreAction } from 'vuexfire'
 import { getField, updateField } from 'vuex-map-fields'
 
 export const state = () => ({
+  edit: false,
   dialog: false,
 })
 
