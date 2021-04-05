@@ -14,6 +14,12 @@
 <img src="assets/readme/dark%20minified%20bar.png">
 
 <img src="assets/readme/minified%20bar.png.png">
+
+## Features
+
+- Persistent login
+- Upload (with Firebase storage)
+
 ## Setup
 
 Clone this repo to your local machine
