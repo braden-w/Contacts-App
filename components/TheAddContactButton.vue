@@ -34,8 +34,8 @@
             >
             </v-text-field>
             <v-menu
-              v-model="menu2"
-              :close-on-content-click="false"
+              v-model="datePickerBirthday"
+              :close-on-content-click="true"
               :nudge-right="40"
               transition="scale-transition"
               offset-y
@@ -43,8 +43,8 @@
             >
               <template #activator="{ on, attrs }">
                 <v-text-field
-                  v-model="date"
-                  label="Picker without buttons"
+                  v-model="form.birthday"
+                  label="Birthday"
                   prepend-icon="mdi-calendar"
                   readonly
                   v-bind="attrs"
@@ -52,11 +52,33 @@
                 ></v-text-field>
               </template>
               <v-date-picker
-                v-model="date"
-                @input="menu2 = false"
+                v-model="form.birthday"
+                @input="datePickerBirthday = false"
               ></v-date-picker>
             </v-menu>
-
+            <v-menu
+              v-model="datePickerLastContact"
+              :close-on-content-click="true"
+              :nudge-right="40"
+              transition="scale-transition"
+              offset-y
+              min-width="auto"
+            >
+              <template #activator="{ on, attrs }">
+                <v-text-field
+                  v-model="form.birthday"
+                  label="Last Contact"
+                  prepend-icon="mdi-calendar"
+                  readonly
+                  v-bind="attrs"
+                  v-on="on"
+                ></v-text-field>
+              </template>
+              <v-date-picker
+                v-model="form.lastContact"
+                @input="datePickerLastContact = false"
+              ></v-date-picker>
+            </v-menu>
             <v-file-input
               :rules="rules"
               chips
