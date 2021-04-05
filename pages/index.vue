@@ -42,7 +42,7 @@ export default {
         { name: 'Birthday', columnsWide: 2, id: 'birthday' },
         { name: 'Last Contact', columnsWide: 2, id: 'lastContact' },
       ],
-      contacts: [
+      /* contacts: [
         {
           picture: '',
           name: 'Braden Wong',
@@ -51,7 +51,7 @@ export default {
           birthday: 'July 12',
           lastContact: 'August 8',
         },
-      ],
+      ], */
       sorts: [
         { icon: 'mdi-folder', title: 'contact name', query: 'title' },
         { icon: 'mdi-account', title: 'person', query: 'person' },
