@@ -70,6 +70,7 @@ You may encounter the mapFields plugin, which is used to simplify a two-way data
 [] Profile Upload (with Firebase storage): Hook up Firebase storage so profile pictures are uploaded, then store the url with the rest of the buffer.
 []Logout button: Create a button tha triggers the logout function the Firebase auth. You can respond to the logout detected state in auth.js
 []Duplicate names: Currently, contact names are used as the document names in Firestore. Creating a unique id per each contact would help avoid overwriting contacts when there is name collision.
+[]Change data types: Dates and phone numbers are currently stored as strings; changing these to the appropriate types could be useful.
 
 ## Setup
 
