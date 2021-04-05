@@ -35,14 +35,14 @@ export const actions = {
       const request = await axios.get(
         `http://universities.hipolabs.com/search?domain=${emailDomain}`
       )
-      const university = request.data[0]
+      const university = request.data?.[0]?.name ?? ''
       const payload = {
         userID,
         email,
         emailVerified,
         photoURL,
         displayName,
-        university: university.name,
+        university,
       }
       try {
         commit('setUser', payload)

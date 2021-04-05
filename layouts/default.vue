@@ -14,7 +14,7 @@
               v-if="signedIn"
               class="d-flex flex-column align-center justify-center"
             >
-              <v-avatar size="30">
+              <v-avatar size="30" class="ma-5">
                 <v-img :src="userCredentials.photoURL" />
               </v-avatar>
             </v-container>
@@ -35,8 +35,10 @@
             </v-container>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item v-if="!miniVariant">
-          <v-list-item-content><TheAddContactButton /></v-list-item-content>
+        <v-list-item v-if="signedIn">
+          <v-container>
+            <TheAddContactButton :mini="miniVariant" />
+          </v-container>
         </v-list-item>
         <v-list-item v-if="!miniVariant">
           <v-list-item-content><TheGoogleLoginButton /></v-list-item-content>
@@ -94,22 +96,12 @@ export default {
   data() {
     return {
       clipped: false,
-      drawer: false,
+      drawer: true,
       pages: [
         {
           icon: 'mdi-apps',
           title: 'Home',
           to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Login',
-          to: '/login',
-        },
-        {
-          icon: 'mdi-map-marker',
-          title: 'MVP',
-          to: '/mvp',
         },
       ],
       miniVariant: false,

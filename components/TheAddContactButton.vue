@@ -1,16 +1,30 @@
 <template>
   <v-dialog
-    v-model="dialogue"
+    v-model="dialog"
     transition="dialog-bottom-transition"
     max-width="600"
   >
     <template #activator="{ on, attrs }">
-      <v-btn color="primary" v-bind="attrs" v-on="on">Add Contact</v-btn>
+      <v-btn v-if="mini" block class="ma-n7">
+        <v-icon @click="activateModal">mdi-account</v-icon></v-btn
+      >
+      <v-btn
+        v-else
+        color="primary"
+        v-bind="attrs"
+        v-on="on"
+        @click="activateModal"
+        >Add/Edit Contact</v-btn
+      >
     </template>
     <template #default="dialog">
       <v-card>
         <v-toolbar color="primary" dark>
-          <v-card-title> <h1 class="display-1">Add Contact</h1></v-card-title>
+          <v-card-title>
+            <h1 class="display-1">
+              {{ edit ? 'View a Contact' : 'Create a New Contact' }}
+            </h1></v-card-title
+          >
         </v-toolbar>
         <v-card-text>
           <v-form ref="form">
@@ -81,19 +95,14 @@
                 @input="datePickerLastContact = false"
               ></v-date-picker>
             </v-menu>
-            <v-file-input
-              :rules="rules"
-              chips
-              accept="image/png, image/jpeg, image/bmp"
-              placeholder="Pick an avatar"
-              prepend-icon="mdi-camera"
-              label="Image"
-            >
+            <v-file-input prepend-icon="mdi-camera" label="Image">
             </v-file-input>
           </v-form>
         </v-card-text>
         <v-card-actions class="justify-end">
-          <v-btn text @click="submit">Close</v-btn>
+          <v-btn color="primary" @click="submitAndDeactivateModal"
+            >{{ edit ? 'Update Contact' : 'Save Contact' }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </template>
@@ -101,10 +110,19 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import { mapFields } from 'vuex-map-fields'
+import { createHelpers } from 'vuex-map-fields'
+import { mapState } from 'vuex'
 
+const { mapFields } = createHelpers({
+  getterType: 'buffer/getField',
+  mutationType: 'buffer/updateField',
+})
 export default {
+  props: {
+    mini: {
+      type: Boolean,
+    },
+  },
   data() {
     return {
       rules: [
@@ -115,7 +133,6 @@ export default {
       ],
       datePickerBirthday: false,
       datePickerLastContact: false,
-      dialogue: false,
     }
   },
   computed: {
@@ -127,11 +144,25 @@ export default {
       'birthday',
       'lastContact',
     ]),
+    dialog: {
+      get() {
+        return this.$store.state.dialog
+      },
+      set(value) {
+        this.$store.commit(value ? 'activateModal' : 'deactivateModal')
+        this.$store.commit('buffer/clearBuffer')
+      },
+    },
+    ...mapState(['edit']),
   },
   methods: {
-    submit() {
-      this.$store.dispatch('submitBuffer')
-      this.dialogue = false
+    submitAndDeactivateModal() {
+      this.$store.dispatch('buffer/submitBuffer')
+      this.$store.commit('deactivateModal')
+    },
+    activateModal() {
+      this.$store.commit('activateModal')
+      this.$store.commit('addMode')
     },
   },
 }
