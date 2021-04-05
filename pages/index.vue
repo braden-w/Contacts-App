@@ -17,7 +17,7 @@
         <v-row>
           <v-col
             v-for="column in layout"
-            :key="column"
+            :key="column.id"
             :cols="column.columnsWide"
           >
             <v-icon v-if="column.icon">{{ contact[column.id] }}</v-icon>

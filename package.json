@@ -15,12 +15,13 @@
     "@nuxtjs/firebase": "^7.5.0",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",
-    "dotenv": "^8.2.0",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.3",
+    "vuexfire": "^3.2.5"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.3",
     "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/vuetify": "^1.11.3",
