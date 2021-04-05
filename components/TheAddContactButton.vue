@@ -5,7 +5,17 @@
     max-width="600"
   >
     <template #activator="{ on, attrs }">
-      <v-btn color="primary" v-bind="attrs" v-on="on">Add Contact</v-btn>
+      <v-btn v-if="mini" block class="ma-n7">
+        <v-icon @click="activateModal">mdi-account</v-icon></v-btn
+      >
+      <v-btn
+        v-else
+        color="primary"
+        v-bind="attrs"
+        v-on="on"
+        @click="activateModal"
+        >Add/Edit Contact</v-btn
+      >
     </template>
     <template #default="dialog">
       <v-card>
