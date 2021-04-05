@@ -79,7 +79,7 @@
                 ></v-text-field>
               </template>
               <v-date-picker
-                v-model="form.lastContact"
+                v-model="lastContact"
                 @input="datePickerLastContact = false"
               ></v-date-picker>
             </v-menu>
@@ -120,7 +120,14 @@ export default {
     }
   },
   computed: {
-    ...mapFields(['picture', 'name', 'email', 'phone', 'birthday']),
+    ...mapFields([
+      'picture',
+      'name',
+      'email',
+      'phone',
+      'birthday',
+      'lastContact',
+    ]),
   },
 }
 </script>
