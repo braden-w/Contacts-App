@@ -15,19 +15,19 @@ To create a contact, click the create contact button:
 ### View/Edit Contact
 
 To view or edit a contact, click the row corresponding to that contact:
-<img src="assets/readme/view%20contact.png.png">
+<img src="assets/readme/view%20contact.png">
 
 ### Light Mode
 
 You can toggle light mode using the lightbulb button on the top right:
-<img src="assets/readme/light%20mode.png.png">
+<img src="assets/readme/light%20mode.png">
 
 ### Minified Mode
 
 You can toggle minified mode using the lightbulb button on the top right:
 <img src="assets/readme/dark%20minified%20bar.png">
 
-<img src="assets/readme/minified%20bar.png.png">
+<img src="assets/readme/minified%20bar.png">
 
 ## Features
 
