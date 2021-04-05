@@ -5,7 +5,7 @@
     </template>
     <template #default="dialog">
       <v-card>
-        <v-toolbar color="primary" dark>Opening from the bottom</v-toolbar>
+        <v-toolbar color="primary" dark>Add Contact</v-toolbar>
         <v-card-text>
           <div class="text-h2 pa-12">Hello world!</div>
         </v-card-text>
