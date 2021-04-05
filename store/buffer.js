@@ -1,3 +1,5 @@
+import { getField, updateField } from 'vuex-map-fields'
+
 export const state = () => ({
   picture: '',
   name: '',
