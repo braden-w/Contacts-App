@@ -37,7 +37,17 @@ export const actions = {
         .doc(rootState.auth.userCredentials.userID)
         .collection('contacts')
         .doc(state.name)
-        .set(state, { merge: true })
+        .set(
+          {
+            picture: state.picture,
+            name: state.name,
+            email: state.email,
+            phone: state.phone,
+            birthday: state.birthday,
+            lastContact: state.lastContact,
+          },
+          { merge: true }
+        )
     } catch (err) {
       alert(err)
     }
