@@ -13,7 +13,12 @@
       </v-row>
       <v-divider />
 
-      <v-card v-for="contact in contacts" :key="contact.name" class="pa-3">
+      <v-card
+        v-for="contact in contacts"
+        :key="contact.name"
+        class="pa-3"
+        @click="activateModal(contact)"
+      >
         <v-row>
           <v-col
             v-for="column in layout"
@@ -81,6 +86,11 @@ export default {
   methods: {
     sortBy(prop) {
       this.projects.sort((a, b) => (a[prop] < b[prop] ? -1 : 1))
+    },
+    activateModal(contact) {
+      this.$store.commit('buffer/updateBuffer', contact)
+      this.$store.commit('editMode')
+      this.$store.commit('activateModal')
     },
   },
 }
