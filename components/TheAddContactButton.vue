@@ -20,7 +20,11 @@
     <template #default="dialog">
       <v-card>
         <v-toolbar color="primary" dark>
-          <v-card-title> <h1 class="display-1">Add Contact</h1></v-card-title>
+          <v-card-title>
+            <h1 class="display-1">
+              {{ edit ? 'View a Contact' : 'Create a New Contact' }}
+            </h1></v-card-title
+          >
         </v-toolbar>
         <v-card-text>
           <v-form ref="form">
@@ -103,7 +107,9 @@
           </v-form>
         </v-card-text>
         <v-card-actions class="justify-end">
-          <v-btn text @click="submit">Close</v-btn>
+          <v-btn color="primary" @click="submitAndDeactivateModal"
+            >{{ edit ? 'Update Contact' : 'Save Contact' }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </template>
