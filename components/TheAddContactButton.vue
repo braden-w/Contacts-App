@@ -135,6 +135,7 @@ export default {
         this.$store.commit('buffer/clearBuffer')
       },
     },
+    ...mapState(['edit']),
   },
   methods: {
     submitAndDeactivateModal() {
