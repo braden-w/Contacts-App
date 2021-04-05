@@ -17,12 +17,12 @@ $ npm run dev
 ### To Serve
 
 ```bash
-# build for production and launch server
-$ npm run build
-$ npm run start
 
-# generate static project
+# generate static project, for hosting on CDN/serverless platforms like Netlify
 $ npm run generate
+
+# serve using statically generated project
+$ npm run start
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
