@@ -115,7 +115,6 @@ export default {
       ],
       datePickerBirthday: false,
       datePickerLastContact: false,
-      dialogue: false,
     }
   },
   computed: {
@@ -129,9 +128,13 @@ export default {
     ]),
   },
   methods: {
-    submit() {
-      this.$store.dispatch('submitBuffer')
-      this.dialogue = false
+    submitAndDeactivateModal() {
+      this.$store.dispatch('buffer/submitBuffer')
+      this.$store.commit('deactivateModal')
+    },
+    activateModal() {
+      this.$store.commit('activateModal')
+      this.$store.commit('addMode')
     },
   },
 }
