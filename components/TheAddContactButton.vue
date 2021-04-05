@@ -95,14 +95,7 @@
                 @input="datePickerLastContact = false"
               ></v-date-picker>
             </v-menu>
-            <v-file-input
-              :rules="rules"
-              chips
-              accept="image/png, image/jpeg, image/bmp"
-              placeholder="Pick an avatar"
-              prepend-icon="mdi-camera"
-              label="Image"
-            >
+            <v-file-input prepend-icon="mdi-camera" label="Image">
             </v-file-input>
           </v-form>
         </v-card-text>
