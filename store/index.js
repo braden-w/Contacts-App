@@ -34,6 +34,8 @@ export const actions = {
       await this.$fire.firestore
         .collection('users')
         .doc(rootState.auth.userCredentials.userID)
+        .collection('contacts')
+        .doc(state.name)
         .set(state, { merge: true })
     } catch (err) {
       alert(err)
