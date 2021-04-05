@@ -110,9 +110,13 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import { mapFields } from 'vuex-map-fields'
+import { createHelpers } from 'vuex-map-fields'
+import { mapState } from 'vuex'
 
+const { mapFields } = createHelpers({
+  getterType: 'buffer/getField',
+  mutationType: 'buffer/updateField',
+})
 export default {
   data() {
     return {
