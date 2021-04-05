@@ -36,6 +36,9 @@
           </v-list-item-content>
         </v-list-item>
         <v-list-item v-if="!miniVariant">
+          <v-list-item-content><TheAddContactButton /></v-list-item-content>
+        </v-list-item>
+        <v-list-item v-if="!miniVariant">
           <v-list-item-content><TheGoogleLoginButton /></v-list-item-content>
         </v-list-item>
         <v-list-item
