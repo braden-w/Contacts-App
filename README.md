@@ -3,14 +3,28 @@
 ## Description
 
 ### Dashboard
+
+The default dashboard for the app looks like the following:
 <img src="assets/readme/dashboard.png">
+
 ### Create Contact
+
+To create a contact, click the create contact button:
 <img src="assets/readme/create%20contact.png">
+
 ### View/Edit Contact
+
+To view or edit a contact, click the row corresponding to that contact:
 <img src="assets/readme/view%20contact.png.png">
+
 ### Light Mode
+
+You can toggle light mode using the lightbulb button on the top right:
 <img src="assets/readme/light%20mode.png.png">
+
 ### Minified Mode
+
+You can toggle minified mode using the lightbulb button on the top right:
 <img src="assets/readme/dark%20minified%20bar.png">
 
 <img src="assets/readme/minified%20bar.png.png">
