@@ -1,6 +1,6 @@
 <template>
   <v-dialog
-    v-model="dialogue"
+    v-model="dialog"
     transition="dialog-bottom-transition"
     max-width="600"
   >
@@ -126,6 +126,15 @@ export default {
       'birthday',
       'lastContact',
     ]),
+    dialog: {
+      get() {
+        return this.$store.state.dialog
+      },
+      set(value) {
+        this.$store.commit(value ? 'activateModal' : 'deactivateModal')
+        this.$store.commit('buffer/clearBuffer')
+      },
+    },
   },
   methods: {
     submitAndDeactivateModal() {
