@@ -87,6 +87,8 @@ export default {
           value.size < 2000000 ||
           'Avatar size should be less than 2 MB!',
       ],
+      datePickerBirthday: false,
+      datePickerLastContact: false,
       form: {
         picture: '',
         name: '',
