@@ -118,6 +118,11 @@ const { mapFields } = createHelpers({
   mutationType: 'buffer/updateField',
 })
 export default {
+  props: {
+    mini: {
+      type: Boolean,
+    },
+  },
   data() {
     return {
       rules: [
