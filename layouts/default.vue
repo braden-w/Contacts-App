@@ -8,7 +8,19 @@
       app
     >
       <v-list>
-        <v-list-item><TheGoogleLoginButton /></v-list-item>
+        <v-container
+          v-if="signedIn"
+          class="d-flex flex-column align-center justify-center"
+        >
+          <v-avatar size="100">
+            <v-img
+              :src="userCredentials.photoURL"
+              :alt="userCredentials.displayName"
+            />
+          </v-avatar>
+          <p class="subtitle-1 mt-1">{{ userCredentials.displayName }}</p>
+        </v-container>
+        <TheGoogleLoginButton />
         <v-list-item
           v-for="(page, i) in pages"
           :key="i"
@@ -56,6 +68,7 @@
 
 <script>
 import TheGoogleLoginButton from '@/components/TheGoogleLoginButton.vue'
+import { mapState } from 'vuex'
 export default {
   components: {
     TheGoogleLoginButton,
@@ -88,6 +101,9 @@ export default {
       rightDrawer: false,
       title: 'Contacts',
     }
+  },
+  computed: {
+    ...mapState('auth', ['signedIn', 'userCredentials']),
   },
   methods: {
     darkMode() {
