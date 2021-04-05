@@ -48,7 +48,6 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-btn icon @click.stop="clipped = !clipped">
@@ -61,9 +60,6 @@
     <v-main>
       <nuxt id="nuxt" />
     </v-main>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
@@ -78,8 +74,6 @@ export default {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
-      dark: false,
       pages: [
         {
           icon: 'mdi-apps',
@@ -98,8 +92,6 @@ export default {
         },
       ],
       miniVariant: false,
-      right: true,
-      rightDrawer: false,
       title: 'Contacts',
     }
   },
