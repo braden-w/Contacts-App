@@ -101,6 +101,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import { mapFields } from 'vuex-map-fields'
 
 export default {
@@ -126,6 +127,9 @@ export default {
       'birthday',
       'lastContact',
     ]),
+  },
+  methods: {
+    ...mapActions({ submit: 'submit' }),
   },
 }
 </script>
