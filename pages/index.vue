@@ -13,7 +13,12 @@
       </v-row>
       <v-divider />
 
-      <v-card v-for="contact in contacts" :key="contact.name" class="pa-3">
+      <v-card
+        v-for="contact in contacts"
+        :key="contact.name"
+        class="pa-3"
+        @click="activateTheDialog"
+      >
         <v-row>
           <v-col
             v-for="column in layout"
