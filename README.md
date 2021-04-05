@@ -2,11 +2,15 @@
 
 ## Description
 
+### Dashboard
 <img src="assets/readme/dashboard.png">
+### Create Contact
 <img src="assets/readme/create%20contact.png">
+### View/Edit Contact
 <img src="assets/readme/view%20contact.png.png">
+### Light Mode
 <img src="assets/readme/light%20mode.png.png">
-
+### Minified Mode
 <img src="assets/readme/dark%20minified%20bar.png">
 
 <img src="assets/readme/minified%20bar.png.png">
