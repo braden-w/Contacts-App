@@ -13,7 +13,6 @@
             <v-text-field
               v-model="form.email"
               :rules="form.emailRules"
-              name="email"
               label="Contact Name"
               prepend-icon="mdi-account-circle"
               required
@@ -22,12 +21,43 @@
             <v-text-field
               v-model="form.email"
               :rules="form.emailRules"
-              name="email"
               label="Email"
               prepend-icon="mdi-email"
               required
             >
             </v-text-field>
+            <v-text-field
+              v-model="form.email"
+              :rules="form.emailRules"
+              label="Phone Number"
+              prepend-icon="mdi-email"
+              required
+            >
+            </v-text-field>
+            <v-menu
+              v-model="menu2"
+              :close-on-content-click="false"
+              :nudge-right="40"
+              transition="scale-transition"
+              offset-y
+              min-width="auto"
+            >
+              <template #activator="{ on, attrs }">
+                <v-text-field
+                  v-model="date"
+                  label="Picker without buttons"
+                  prepend-icon="mdi-calendar"
+                  readonly
+                  v-bind="attrs"
+                  v-on="on"
+                ></v-text-field>
+              </template>
+              <v-date-picker
+                v-model="date"
+                @input="menu2 = false"
+              ></v-date-picker>
+            </v-menu>
+
             <v-file-input
               :rules="rules"
               chips
@@ -35,7 +65,8 @@
               placeholder="Pick an avatar"
               prepend-icon="mdi-camera"
               label="Image"
-            ></v-file-input>
+            >
+            </v-file-input>
           </v-form>
         </v-card-text>
         <v-card-actions class="justify-end">
