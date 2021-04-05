@@ -49,6 +49,14 @@ Vuex is the source of truth for this project, with the following namespaced modu
 2. Auth: This stores user a user's login status and credentials pulled from Firebase Auth
 
 3. Buffer: This stores information of the currently edited contact, which is displayed when the modal is opened. It is autopopulated when a contact is clicked, and cleared when the "Add Contact" is clicked.
+
+### Vuexfire
+
+Vuexfire is used to set a real-time one way binding from a user's contacts on Firestore to their contacts in Vuex. Therefore, Firestore is the source of truth over Vuex for **user contacts.**
+
+When adding and editing contacts, the changes are written to Firestore directly, which are then automatically pulled and updated in the Vuex store, which subsequently updates the application.
+
+Note that Vuex is the source of truth for most other values, such as the buffer
 - Persistent login
 - Upload (with Firebase storage)
 
