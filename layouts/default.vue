@@ -18,7 +18,8 @@
               :alt="userCredentials.displayName"
             />
           </v-avatar>
-          <p class="subtitle-1 mt-1">{{ userCredentials.displayName }}</p>
+          <h1 class="subtitle-1 mt-1">{{ userCredentials.displayName }}</h1>
+          <h2 class="subtitle-2 mt-1">{{ userCredentials.university }}</h2>
         </v-container>
         <TheGoogleLoginButton />
         <v-list-item
