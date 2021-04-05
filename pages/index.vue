@@ -20,7 +20,13 @@
             :key="column.id"
             :cols="column.columnsWide"
           >
-            <v-icon v-if="column.icon">{{ contact[column.id] }}</v-icon>
+            <v-container v-if="column.icon">
+              <v-row align="center">
+                <v-avatar size="20">
+                  <v-img :src="contact[column.id]"></v-img>
+                </v-avatar>
+              </v-row>
+            </v-container>
             <h1 v-else class="caption">{{ contact[column.id] }}</h1>
           </v-col>
         </v-row>
