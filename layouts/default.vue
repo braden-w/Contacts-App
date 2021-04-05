@@ -8,7 +8,7 @@
       app
     >
       <v-list>
-        <v-list-item>
+        <v-list-item class="ma-n6">
           <v-list-item-action v-if="miniVariant">
             <v-container
               v-if="signedIn"
@@ -34,6 +34,9 @@
               <h2 class="subtitle-2 mt-1">{{ userCredentials.university }}</h2>
             </v-container>
           </v-list-item-content>
+        </v-list-item>
+        <v-list-item v-if="!miniVariant">
+          <v-list-item-content><TheAddContactButton /></v-list-item-content>
         </v-list-item>
         <v-list-item v-if="!miniVariant">
           <v-list-item-content><TheGoogleLoginButton /></v-list-item-content>
@@ -81,10 +84,12 @@
 
 <script>
 import TheGoogleLoginButton from '@/components/TheGoogleLoginButton.vue'
+import TheAddContactButton from '@/components/TheAddContactButton.vue'
 import { mapState } from 'vuex'
 export default {
   components: {
     TheGoogleLoginButton,
+    TheAddContactButton,
   },
   data() {
     return {
