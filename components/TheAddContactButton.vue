@@ -15,23 +15,23 @@
         <v-card-text>
           <v-form ref="form">
             <v-text-field
-              v-model="form.name"
+              v-model="name"
               label="Contact Name"
               prepend-icon="mdi-account-circle"
               required
             >
             </v-text-field>
             <v-text-field
-              v-model="form.email"
-              :rules="form.emailRules"
+              v-model="email"
+              :rules="emailRules"
               label="Email"
               prepend-icon="mdi-email"
               required
             >
             </v-text-field>
             <v-text-field
-              v-model="form.phone"
-              :rules="form.phoneRules"
+              v-model="phone"
+              :rules="phoneRules"
               label="Phone Number"
               prepend-icon="mdi-phone"
               required
@@ -47,7 +47,7 @@
             >
               <template #activator="{ on, attrs }">
                 <v-text-field
-                  v-model="form.birthday"
+                  v-model="birthday"
                   label="Birthday"
                   prepend-icon="mdi-cake"
                   readonly
@@ -56,7 +56,7 @@
                 ></v-text-field>
               </template>
               <v-date-picker
-                v-model="form.birthday"
+                v-model="birthday"
                 @input="datePickerBirthday = false"
               ></v-date-picker>
             </v-menu>
@@ -70,7 +70,7 @@
             >
               <template #activator="{ on, attrs }">
                 <v-text-field
-                  v-model="form.birthday"
+                  v-model="lastContact"
                   label="Last Contact"
                   prepend-icon="mdi-calendar"
                   readonly
@@ -119,6 +119,8 @@ export default {
       dialogue: false,
     }
   },
-  ...mapFields(['picture', 'name', 'email', 'phone', 'birthday']),
+  computed: {
+    ...mapFields(['picture', 'name', 'email', 'phone', 'birthday']),
+  },
 }
 </script>
