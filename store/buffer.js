@@ -7,6 +7,10 @@ export const state = () => ({
   lastContact: '',
 })
 
+export const getters = { getField }
+
+export const mutations = {
+  updateField,
 export const actions = {
   async submitBuffer({ state, commit, rootState }) {
     if (!state.name) return
