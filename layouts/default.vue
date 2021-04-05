@@ -14,7 +14,7 @@
               v-if="signedIn"
               class="d-flex flex-column align-center justify-center"
             >
-              <v-avatar size="30">
+              <v-avatar size="30" class="ma-5">
                 <v-img :src="userCredentials.photoURL" />
               </v-avatar>
             </v-container>
@@ -102,16 +102,6 @@ export default {
           icon: 'mdi-apps',
           title: 'Home',
           to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Login',
-          to: '/login',
-        },
-        {
-          icon: 'mdi-map-marker',
-          title: 'MVP',
-          to: '/mvp',
         },
       ],
       miniVariant: false,
