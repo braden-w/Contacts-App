@@ -8,7 +8,10 @@ export const actions = {
     { bindFirestoreRef },
     userID
   ) {
-    const ref = this.$fire.firestore.collection('users').doc(userID)
+    const ref = this.$fire.firestore
+      .collection('users')
+      .doc(userID)
+      .collection('contacts')
     return await bindFirestoreRef('userdata', ref, { wait: true })
   }),
   unbindUserDataBetweenFirestoreAndVuex: firestoreAction(function ({
