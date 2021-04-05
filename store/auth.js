@@ -24,7 +24,6 @@ export const actions = {
       // Perform logout operations
     } else {
       // Perform login operations
-      console.log(authUser)
       const {
         uid: userID,
         email,
@@ -75,7 +74,8 @@ export const actions = {
   },
   async signOut({ commit }) {
     try {
-      commit('setUser', await this.$fire.auth.signOut())
+      await this.$fire.auth.signOut()
+      commit('setUser', {})
       commit('setSignedIn', false)
     } catch (err) {
       alert(err)
