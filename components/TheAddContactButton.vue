@@ -18,3 +18,20 @@
     </template>
   </v-dialog>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      form: {
+        picture: '',
+        name: '',
+        email: '',
+        phone: '',
+        birthday: '',
+        lastContact: '',
+      },
+    }
+  },
+}
+</script>
