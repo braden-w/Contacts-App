@@ -8,7 +8,7 @@
       app
     >
       <v-list>
-        <v-list-item>
+        <v-list-item class="mb-n6">
           <v-list-item-action v-if="miniVariant">
             <v-container
               v-if="signedIn"
