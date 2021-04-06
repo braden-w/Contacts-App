@@ -68,41 +68,13 @@ export default {
         { name: 'Birthday', columnsWide: 2, id: 'birthday' },
         { name: 'Last Contact', columnsWide: 2, id: 'lastContact' },
       ],
-      /* contacts: [
-        {
-          picture: '',
-          name: 'Braden Wong',
-          email: 'braden.wong@yale.edu',
-          phone: '6266274599',
-          birthday: 'July 12',
-          lastContact: 'August 8',
-        },
-      ], */
-      sorts: [
-        { icon: 'mdi-folder', title: 'contact name', query: 'title' },
-        { icon: 'mdi-account', title: 'person', query: 'person' },
-        { icon: 'mdi-folder', title: 'contact status', query: 'status' },
-      ],
     }
   },
   computed: {
     ...mapState(['contacts']),
     ...mapState('auth', ['signedIn']),
   },
-  created() {
-    this.$fire.firestore.collection('projects').onSnapshot((res) => {
-      const changes = res.docChanges()
-      changes.forEach((change) => {
-        if (change.type === 'added') {
-          this.projects.push({ ...change.doc.data(), id: change.doc.id })
-        }
-      })
-    })
-  },
   methods: {
-    sortBy(prop) {
-      this.projects.sort((a, b) => (a[prop] < b[prop] ? -1 : 1))
-    },
     activateModal(contact) {
       this.$store.commit('buffer/updateBuffer', contact)
       this.$store.commit('editMode')
