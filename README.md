@@ -93,6 +93,12 @@ export interface Contact {
 }
 ```
 
+### Buffer
+
+The **buffer** is a locally-stored Contact that contains the information of the currently edited contact. When a new Contact is being created, the buffer is blank. A user edits the buffer through the Add/Edit Contact modal, and upon submit, the buffer is sent to the FireStore.
+
+## Other technologies
+
 ### Vuex
 
 Vuex stores relevant data from FireStore and globally accessible UI properties for this project, with the following namespaced modules:
