@@ -1,6 +1,29 @@
 # Contacts-App
 
-## Description
+A simple CRUD app displaying a user's contacts.
+
+- [Contacts-App](#contacts-app)
+  - [Overview](#overview)
+    - [Dashboard](#dashboard)
+    - [Create Contact](#create-contact)
+    - [View/Edit Contact](#viewedit-contact)
+    - [Light Mode](#light-mode)
+    - [Minified Mode](#minified-mode)
+    - [Login](#login)
+  - [Data Storage](#data-storage)
+    - [FireStore](#firestore)
+    - [Contacts](#contacts)
+  - [Data Editing](#data-editing)
+  - [Other technologies](#other-technologies)
+    - [Vuex](#vuex)
+    - [Vuexfire](#vuexfire)
+    - [mapFields](#mapfields)
+  - [Setup](#setup)
+    - [To Develop](#to-develop)
+    - [To Serve Static Site](#to-serve-static-site)
+  - [Todos](#todos)
+
+## Overview
 
 ### Dashboard
 
