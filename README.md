@@ -82,11 +82,7 @@ Vuex stores relevant data from FireStore and globally accessible UI properties f
 
 Vuexfire is used to set a real-time one way binding from a user's contacts on Firestore to their contacts in Vuex. Therefore, Firestore is the source of truth over Vuex for **user contacts.**
 
-When adding and editing contacts, the changes are written to Firestore directly, which are then automatically pulled and updated in the Vuex store, which subsequently updates the application.
-
-Note that Vuex is the source of truth for most other values, such as the buffer
-
-## Other technologies
+When adding and editing contacts, the changes are written to Firestore directly, which are then automatically pulled and updated into the Vuex store, which subsequently updates the application.
 
 ### mapFields
 
