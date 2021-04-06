@@ -47,7 +47,7 @@ You can toggle light mode using the lightbulb button on the top right:
 
 ### Minified Mode
 
-You can toggle minified mode using the lightbulb button on the top right:
+You can toggle minified mode using the bar button on the top right:
 <img src="assets/readme/dark%20minified%20bar.png">
 
 <img src="assets/readme/minified%20bar.png">
