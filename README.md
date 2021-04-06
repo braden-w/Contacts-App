@@ -61,6 +61,22 @@ If not logged in, the user is prompted to do so:
 
 Storage of contact data is handled through [FireStore](###FireStore) and [contact objects](####Contacts), whereas editing is handled through the [buffer](###Buffer).
 
+### FireStore
+
+The storage for the entire application is the following:
+
+```
+users
+- user1
+  - contacts
+    - ...
+  - displayName
+  - email
+  - emailVerified
+  - photoURL
+  - userID
+- ...
+```
 ### Vuex
 
 Vuex stores relevant data from FireStore and globally accessible UI properties for this project, with the following namespaced modules:
