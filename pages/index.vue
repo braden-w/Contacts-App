@@ -11,8 +11,8 @@
           <h1 v-else class="caption">{{ column.name }}</h1>
         </v-col>
       </v-row>
-      <v-card class="mx-auto pa-4" max-width="600">
-        <h1 class="heading-1">Please sign in with Google</h1>
+      <v-card class="mx-auto pa-4">
+        <h1 class="heading-1 text-center">Please sign in with Google</h1>
       </v-card>
     </v-container>
     <v-container v-else class="my-5">
