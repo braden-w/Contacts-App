@@ -57,7 +57,9 @@ You can toggle minified mode using the bar button on the top right:
 If not logged in, the user is prompted to do so:
 <img src="assets/readme/login.png">
 
-## Design
+## Data Storage
+
+Storage of contact data is handled through [FireStore](###FireStore) and [contact objects](####Contacts), whereas editing is handled through the [buffer](###Buffer).
 
 ### Vuex
 
