@@ -54,6 +54,7 @@ You can toggle minified mode using the bar button on the top right:
 
 ### Login
 
+If not logged in, the user is prompted to do so:
 <img src="assets/readme/login.png">
 
 ## Design
