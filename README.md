@@ -77,6 +77,22 @@ users
   - userID
 - ...
 ```
+
+#### Contacts
+
+**Contacts** are stored as an array of **Contact** objects, and each object has the following structure:
+
+```typescript
+export interface Contact {
+  birthday: string
+  email: string
+  lastContact: string
+  name: string
+  phone: string
+  picture: string
+}
+```
+
 ### Vuex
 
 Vuex stores relevant data from FireStore and globally accessible UI properties for this project, with the following namespaced modules:
