@@ -166,6 +166,10 @@ $ npm run start
 
 ## Todos
 
+- [ ] Unique Contact ID's
+  - Currently, contact names are used as the document names in Firestore.
+  - Because of this, changing a contact's name creates a new contact rather than editing that contact directly
+  - [ ] Creating a unique id per each contact would help avoid overwriting contacts when there is name collision.
 - [ ] Logout button/Proper Logout handling
   - Currently, logging in with other accounts temporarily displays residual information from the last account, because there is no proper logout handling
   - [ ] Create a button tha triggers the logout function in Firebase auth. You can respond to the logout detected state in auth.js. **Make sure to clear the Vuex store**.
