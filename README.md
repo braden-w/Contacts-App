@@ -88,25 +88,20 @@ When adding and editing contacts, the changes are written to Firestore directly,
 
 You may encounter the mapFields plugin, which is used to simplify a two-way data-binding with a form. This is used to synchronize the modal values with the values stored in the **buffer** module of the Vuex store
 
-## TODO
-
-- [ ] Logout button/Proper Logout handling
-  - Currently, logging in with other accounts temporarily displays residual information from the last account, because there is no proper logout handling
-  - [ ] Create a button tha triggers the logout function in Firebase auth. You can respond to the logout detected state in auth.js. **Make sure to clear the Vuex store**.
-- [ ] Persistent login
-  - The login state of Vuex does not last after a refresh or close/open.
-  - [ ] Make the Vuex persist, perhaps through writing to cookies or storing a JWT token
-- [ ] Profile Upload (with Firebase storage)
-  - [ ] Hook up Firebase storage so profile pictures are uploaded, then store the url with the rest of the buffer.
-- [ ] Duplicate names
-  - Currently, contact names are used as the document names in Firestore. 
-  - [ ] Creating a unique id per each contact would help avoid overwriting contacts when there is name collision.
-- [ ] Change data types
-  - Dates and phone numbers are currently stored as strings; changing these to the appropriate types could be useful.
-
 ## Setup
 
-Clone this repo to your local machine
+1. Clone this repo to your local machine
+2. Add a .env file to the root with the following variables
+
+```dotenv
+FIREBASE_API_KEY
+FIREBASE_AUTH_DOMAIN
+FIREBASE_PROJECT_ID
+FIREBASE_STORAGE_BUCKET
+FIREBASE_MESSAGING_SENDER_ID
+FIREBASE_APP_ID
+FIREBASE_MEASUREMENT_ID
+```
 
 ### To Develop
 
@@ -128,3 +123,19 @@ $ npm run generate
 # serve using statically generated project
 $ npm run start
 ```
+
+## Todos
+
+- [ ] Logout button/Proper Logout handling
+  - Currently, logging in with other accounts temporarily displays residual information from the last account, because there is no proper logout handling
+  - [ ] Create a button tha triggers the logout function in Firebase auth. You can respond to the logout detected state in auth.js. **Make sure to clear the Vuex store**.
+- [ ] Persistent login
+  - The login state of Vuex does not last after a refresh or close/open.
+  - [ ] Make the Vuex persist, perhaps through writing to cookies or storing a JWT token
+- [ ] Profile Upload (with Firebase storage)
+  - [ ] Hook up Firebase storage so profile pictures are uploaded, then store the url with the rest of the buffer into the contact
+- [ ] Duplicate names
+  - Currently, contact names are used as the document names in Firestore.
+  - [ ] Creating a unique id per each contact would help avoid overwriting contacts when there is name collision.
+- [ ] Change data types
+  - Dates and phone numbers are currently stored as strings; changing these to the appropriate types could be useful.
